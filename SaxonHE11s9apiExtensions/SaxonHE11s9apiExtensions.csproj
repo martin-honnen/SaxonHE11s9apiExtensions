@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IKVM.Maven.Sdk" Version="1.0.1" />
+	<MavenReference Include="net.sf.saxon:Saxon-HE" version="11.4" />
+	<MavenReference Include="org.xmlresolver:xmlresolver" Version="4.5.1" />
+	<MavenReference Include="org.xmlresolver:xmlresolver" Category="data" Version="4.5.1" />
+  </ItemGroup>
+
+</Project>
