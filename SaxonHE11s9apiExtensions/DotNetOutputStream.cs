@@ -16,7 +16,7 @@
 
 using JOutputStream = java.io.OutputStream;
 
-namespace SaxonHE11s9apiExtensions
+namespace net.liberty_development.SaxonHE11s9apiExtensions
 {
 
     /**

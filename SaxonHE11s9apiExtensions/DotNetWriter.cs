@@ -17,7 +17,7 @@
 using JWriter = java.io.Writer;
 using JException = java.lang.Exception;
 
-namespace SaxonHE11s9apiExtensions
+namespace net.liberty_development.SaxonHE11s9apiExtensions
 {
 
     /**

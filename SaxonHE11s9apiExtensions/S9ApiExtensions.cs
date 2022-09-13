@@ -14,7 +14,7 @@ using URL = java.net.URL;
 using URI = java.net.URI;
 using Source = javax.xml.transform.Source;
 
-namespace SaxonHE11s9apiExtensions
+namespace net.liberty_development.SaxonHE11s9apiExtensions
 {
     static public class S9ApiExtensions
     {
