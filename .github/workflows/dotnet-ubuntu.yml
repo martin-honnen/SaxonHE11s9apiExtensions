@@ -1,4 +1,4 @@
-name: .NET
+name: .NET under Ubuntu
 
 on:
   push:
