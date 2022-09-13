@@ -1,4 +1,4 @@
-# Saxon HE 11 s9api .NET extension method helps
+# Saxon HE 11 s9api .NET extension method helpers
 Extension methods that help/ease the task of using Saxon HE 11 Java s9api from .NET code
 
 This is a sample project outlining my successful attempt to apply https://github.com/ikvm-revived/ikvm and
