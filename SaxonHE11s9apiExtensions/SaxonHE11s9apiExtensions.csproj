@@ -7,11 +7,13 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
     <Title>Saxon HE 11 s9api Extension Helpers to use IKVM compiled Saxon HE 11 with .NET 6</Title>
-    <Version>11.4-alpha2</Version>
+    <Version>11.4-alpha3</Version>
     <Authors>Martin Honnen</Authors>
     <Description>This is an extension method library to ease the use of an IKVM compiled version of Saxon HE 11 Java in .NET 6 applications.</Description>
     <Copyright>Copyright 2022 Martin Honnen</Copyright>
     <PackageTags>xslt;xpath;xquery;xslt-3.0;xquery-3.1;xpath-3.1;json</PackageTags>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/martin-honnen/SaxonHE11s9apiExtensions</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
