@@ -22,6 +22,11 @@ namespace net.liberty_development.SaxonHE11s9apiExtensions
         {
             return new URI(uri.AbsoluteUri);
         }
+
+        public static Uri ToUri(this URI uri)
+        {
+            return new Uri(uri.toASCIIString());
+        }
         public static Source AsSource(this string sourceString)
         {
             return new StreamSource(new java.io.StringReader(sourceString));
