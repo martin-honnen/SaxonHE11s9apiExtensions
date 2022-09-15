@@ -29,7 +29,7 @@ This extension project is also on NuGet so you can add it in your project e.g.
 ```
   <ItemGroup>
     <PackageReference Include="IKVM.Maven.Sdk" Version="1.0.1" />
-    <PackageReference Include="SaxonHE11s9apiExtensions" Version="11.4.0-alpha4" />
+    <PackageReference Include="SaxonHE11s9apiExtensions" Version="11.4.0-alpha5" />
     <MavenReference Include="net.sf.saxon:Saxon-HE" version="11.4" />
     <MavenReference Include="org.xmlresolver:xmlresolver" Version="4.5.1" />
     <MavenReference Include="org.xmlresolver:xmlresolver" Category="data" Version="4.5.1" />
