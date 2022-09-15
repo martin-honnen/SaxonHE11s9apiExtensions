@@ -181,5 +181,15 @@ namespace net.liberty_development.SaxonHE11s9apiExtensions
             return processor.newSerializer(new DotNetOutputStream(stream));
         }
 
+        /// <summary>
+        /// Utility extension method to pass a .NET FileInfo as the input to an Xslt30Transformer, returning an Destination.
+        /// </summary>
+        /// <param name="xslt30Transformer">The Xslt30Transformer this extension method is called on.</param>
+        /// <param name="inputFile">The .NET FileInfo to an input file as the input to the XSLT 3.0 transformation.</param>
+        /// <param name="destination">The Destination holding the (principal) result of the XSLT 3.0 transformation.</param>
+        public static void Transform(this Xslt30Transformer xslt30Transformer, FileInfo inputFile, Destination destination)
+        {
+            xslt30Transformer.transform(new StreamSource(new java.io.File(inputFile.FullName)), destination);
+        }
     }
 }
