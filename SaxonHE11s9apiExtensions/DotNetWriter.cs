@@ -20,18 +20,19 @@ using JException = java.lang.Exception;
 namespace net.liberty_development.SaxonHE11s9apiExtensions
 {
 
-    /**
-    * Implement a Java Writer that wraps a supplied .NET TextWriter
-    */
+    /// <summary>
+    /// Implement a Java Writer that wraps a supplied .NET TextWriter
+    /// </summary>
     public class DotNetWriter : JWriter
     {
         private TextWriter textWriter;
 
-        /**
-         * Create a Java Writer that wraps a supplied .NET TextWriter
-         *
-         * @param writer the .NET TextWriter to be wrapped
-         */
+
+
+        /// <summary>
+        /// Create a Java Writer that wraps a supplied .NET TextWriter
+        /// </summary>
+        /// <param name="writer">The .NET TextWriter to be wrapped.</param>
 
         public DotNetWriter(TextWriter writer)
         {

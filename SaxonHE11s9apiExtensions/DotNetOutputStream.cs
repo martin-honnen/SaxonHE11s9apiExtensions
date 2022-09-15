@@ -19,13 +19,17 @@ using JOutputStream = java.io.OutputStream;
 namespace net.liberty_development.SaxonHE11s9apiExtensions
 {
 
-    /**
-    * A Java OutputStream implemented as a wrapper around a .NET stream
-    */
+    /// <summary>
+    /// A Java OutputStream implemented as a wrapper around a .NET stream
+    /// </summary>
     public class DotNetOutputStream : JOutputStream
     {
         Stream stream;
 
+        /// <summary>
+        /// Creates a Java <c>java.io.OutputStream</c> from a .NET <c>System.IO.Stream</c>
+        /// </summary>
+        /// <param name="stream"></param>
         public DotNetOutputStream(Stream stream)
         {
             this.stream = stream;
