@@ -17,7 +17,7 @@ Known issues: I have created the project with VS 2022 Community Edition on Windo
 The basic usage is to to install the NuGet package IKVM.Maven.Sdk to be able to pull in the Saxon HE 11 (e.g. 11.4) and the XmlResolver code it uses directly from Maven:
 ```
   <ItemGroup>
-    <PackageReference Include="IKVM.Maven.Sdk" Version="1.0.1" />
+    <PackageReference Include="IKVM.Maven.Sdk" Version="1.0.2" />
     <MavenReference Include="net.sf.saxon:Saxon-HE" version="11.4" />
     <MavenReference Include="org.xmlresolver:xmlresolver" Version="4.5.1" />
     <MavenReference Include="org.xmlresolver:xmlresolver" Category="data" Version="4.5.1" />
@@ -28,8 +28,8 @@ This extension project is also on NuGet so you can add it in your project e.g.
 
 ```
   <ItemGroup>
-    <PackageReference Include="IKVM.Maven.Sdk" Version="1.0.1" />
-    <PackageReference Include="SaxonHE11s9apiExtensions" Version="11.4.0-alpha5" />
+    <PackageReference Include="IKVM.Maven.Sdk" Version="1.0.2" />
+    <PackageReference Include="SaxonHE11s9apiExtensions" Version="11.4.0" />
     <MavenReference Include="net.sf.saxon:Saxon-HE" version="11.4" />
     <MavenReference Include="org.xmlresolver:xmlresolver" Version="4.5.1" />
     <MavenReference Include="org.xmlresolver:xmlresolver" Category="data" Version="4.5.1" />
