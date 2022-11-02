@@ -1,0 +1,15 @@
+﻿<Project Sdk="IKVM.NET.Sdk/8.2.2-prerelease0553">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="AxisIteratorBase.java" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="AxisIteratorBase.java" />
+  </ItemGroup>
+
+</Project>

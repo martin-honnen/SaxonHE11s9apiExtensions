@@ -7,12 +7,23 @@
 // Uses the executable form of Saxon HE 11 Java which is an open source product from Saxonica https://saxonica.com/
 // 
 
+using System.Xml;
 using javax.xml.transform.stream;
 using net.sf.saxon.s9api;
 
 using URL = java.net.URL;
 using URI = java.net.URI;
 using Source = javax.xml.transform.Source;
+using net.sf.saxon.pull;
+using SaxonHE11s9apiExtensions;
+
+using JParseOptions = net.sf.saxon.lib.ParseOptions;
+using JPullSource = net.sf.saxon.pull.PullSource;
+
+using AugmentedSource = net.sf.saxon.lib.AugmentedSource;
+
+
+using net.sf.saxon.om;
 
 namespace net.liberty_development.SaxonHE11s9apiExtensions
 {
@@ -102,6 +113,53 @@ namespace net.liberty_development.SaxonHE11s9apiExtensions
             return docBuilder.build(new java.io.File(file.FullName));
         }
 
+        /// <summary>
+        /// utility extension method that allows you to call <c>Build</c> on an <c>XmlReader</c>
+        /// to create a <c>net.sf.saxon.s9api.XdmNode</c>.
+        /// </summary>
+        /// <param name="docBuilder">The <c>net.sf.saxon.s9api.DocumentBuilder</c> to call extension method on.</param>
+        /// <param name="processor">The <c>net.sf.saxon.s9api.Processor</c> to which the DocumentBuilder belongs.</param>
+        /// <param name="xmlReader">The <c>System.XmlReader</c> to build an Xdm tree from.</param>
+        /// <returns>A <c>net.sf.saxon.s9api.XdmNode</c></returns>
+        public static XdmNode Build(this DocumentBuilder docBuilder, Processor processor, XmlReader xmlReader)
+        {
+            PullProvider pp = new DotNetPullProvider(xmlReader);
+            pp.setPipelineConfiguration(processor.getUnderlyingConfiguration().makePipelineConfiguration());
+            // pp = new PullTracer(pp);  /* diagnostics */
+            Source source = new JPullSource(pp);
+            source.setSystemId(xmlReader.BaseURI);
+            JParseOptions options = new JParseOptions(processor.getUnderlyingConfiguration().getParseOptions());
+
+            source = augmentSource(source, options);
+            NodeInfo doc = docBuilder.build(source).getUnderlyingNode(); //config.buildDocumentTree(source, options).getRootNode();
+            return (XdmNode)XdmValue.wrap(doc);
+        }
+
+        /// <summary>
+        /// utility extension method that allows you to call <c>Build</c> on a <c>System.Xml.XmlNode</c>.
+        /// </summary>
+        /// <param name="docBuilder">The <c>net.sf.saxon.s9api.DocumentBuilder</c> to call extension method on.</param>
+        /// <param name="processor">The <c>net.sf.saxon.s9api.Processor</c> to which the DocumentBuilder belongs.</param>
+        /// <param name="sourceNode">The <c>System.Xml.XmlNode</c> to build an Xdm tree from.</param>
+        /// <returns>A <c>net.sf.saxon.s9api.XdmNode</c></returns>
+        public static XdmNode Build(this DocumentBuilder docBuilder, Processor processor, XmlNode sourceNode)
+        {
+            return docBuilder.Build(processor, new XmlNodeReader(sourceNode));
+        }
+
+        /// <summary>
+        /// utility extension method that allows you to call <c>Wrap</c> a <c>System.Xml.XmlNode</c>.
+        /// </summary>
+        /// <param name="docBuilder">The <c>net.sf.saxon.s9api.DocumentBuilder</c> to call extension method on.</param>
+        /// <param name="processor">The underlying <c>net.sf.saxon.s9api.Processor</c> to which the DocumentBuilder belongs.</param>
+        /// <param name="sourceNode">The <c>System.Xml.XmlNode</c> to build an Xdm tree from.</param>
+        /// <param name="baseUri">The optional base URI.</param>
+        /// <returns>A <c>net.sf.saxon.s9api.XdmNode</c></returns>
+        public static XdmNode Wrap(this DocumentBuilder docBuilder, Processor processor, XmlNode sourceNode, string? baseUri)
+        {
+            DotNetDocumentWrapper wrapper = new DotNetDocumentWrapper(sourceNode, baseUri, processor.getUnderlyingConfiguration());
+            return (XdmNode)XdmValue.wrap(wrapper.getRootNode());
+        }
 
         /// <summary>
         /// Utility extension method to compile an XSLT stylesheet directly from a <paramref name="uri"/> <c>System.Uri</c>.
@@ -190,6 +248,14 @@ namespace net.liberty_development.SaxonHE11s9apiExtensions
         public static void Transform(this Xslt30Transformer xslt30Transformer, FileInfo inputFile, Destination destination)
         {
             xslt30Transformer.transform(new StreamSource(new java.io.File(inputFile.FullName)), destination);
+        }
+
+
+
+        static private Source augmentSource(Source source, JParseOptions options)
+        {
+
+            return new AugmentedSource(source, options);
         }
     }
 }
