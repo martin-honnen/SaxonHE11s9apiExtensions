@@ -79,6 +79,29 @@ namespace net.liberty_development.SaxonHE11s9apiExtensions
         }
 
         /// <summary>
+        /// Utility extension method to convert the .NET (input) <paramref name="stream"/> it is called on into a <c>java.xml.transform.Source</c>,
+        /// the primary form of input most s9api methods take as an input
+        /// </summary>
+        /// <param name="stream">This <c>System.IO.Stream</c> to be used as a Source.</param>
+        /// <returns>A <c>java.xml.transform.Source</c></returns>
+        public static Source AsSource(this Stream stream)
+        {
+            return new StreamSource(new DotNetInputStream(stream));
+        }
+
+        /// <summary>
+        /// Utility extension method to convert the .NET (input) <paramref name="stream"/> it is called on into a <c>java.xml.transform.Source</c>,
+        /// the primary form of input most s9api methods take as an input
+        /// </summary>
+        /// <param name="stream">This <c>System.IO.Stream</c> to be used as a Source.</param>
+        /// <param name="systemId">The URI string to be used as the system id.</param>
+        /// <returns>A <c>java.xml.transform.Source</c></returns>
+        public static Source AsSource(this Stream stream, string systemId)
+        {
+            return new StreamSource(new DotNetInputStream(stream), systemId);
+        }
+
+        /// <summary>
         /// utility extension method that allows you to call <c>Build</c> on <c>DocumentBuilder</c> directly with a <paramref name="uri"/>
         /// to create a <c>net.sf.saxon.s9api.XdmNode</c>
         /// </summary>
