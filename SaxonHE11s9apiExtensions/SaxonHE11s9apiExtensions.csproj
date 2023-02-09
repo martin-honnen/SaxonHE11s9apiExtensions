@@ -7,22 +7,22 @@
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
     <Title>Saxon HE 11 s9api Extension Helpers to use IKVM compiled Saxon HE 11 with .NET 6</Title>
-    <Version>11.4.0.3</Version>
+    <Version>11.5.0</Version>
     <Authors>Martin Honnen</Authors>
     <Description>This is an extension method library to ease the use of an IKVM compiled version of Saxon HE 11 Java in .NET 6 applications.</Description>
     <Copyright>Copyright 2023 Martin Honnen</Copyright>
     <PackageTags>xslt;XSLT;xpath;XPath;xquery;XQuery;xslt-3.0;XSLT-3.0;xquery-3.1;XQuery-3.1;xpath-3.1;XPath-3.1;json</PackageTags>
-	<PackageReleaseNotes>This is a minor update of the used components.</PackageReleaseNotes>
+	<PackageReleaseNotes>This is the first update to Saxon HE 11.5.</PackageReleaseNotes>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/martin-honnen/SaxonHE11s9apiExtensions</RepositoryUrl>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IKVM.Maven.Sdk" Version="1.2.0" />
-	<MavenReference Include="net.sf.saxon:Saxon-HE" version="11.4" />
-	<MavenReference Include="org.xmlresolver:xmlresolver" Version="4.5.1" />
-	<MavenReference Include="org.xmlresolver:xmlresolver" Category="data" Version="4.5.1" />
+    <PackageReference Include="IKVM.Maven.Sdk" Version="1.4.1" />
+	<MavenReference Include="net.sf.saxon:Saxon-HE" version="11.5" />
+	<!--<MavenReference Include="org.xmlresolver:xmlresolver" Version="4.5.1" />
+	<MavenReference Include="org.xmlresolver:xmlresolver" Category="data" Version="4.5.1" />-->
   </ItemGroup>
 
 </Project>
