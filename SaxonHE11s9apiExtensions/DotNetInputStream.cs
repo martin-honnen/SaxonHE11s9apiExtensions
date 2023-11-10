@@ -14,7 +14,7 @@
 // This Source Code Form is "Incompatible With Secondary Licenses", as defined by the Mozilla Public License, v. 2.0.
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
+using System.IO;
 using JInputStream = java.io.InputStream;
 
 namespace net.liberty_development.SaxonHE11s9apiExtensions

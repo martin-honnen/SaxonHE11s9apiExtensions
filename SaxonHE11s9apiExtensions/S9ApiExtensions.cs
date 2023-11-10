@@ -13,6 +13,8 @@ using net.sf.saxon.s9api;
 using URL = java.net.URL;
 using URI = java.net.URI;
 using Source = javax.xml.transform.Source;
+using System;
+using System.IO;
 
 namespace net.liberty_development.SaxonHE11s9apiExtensions
 {

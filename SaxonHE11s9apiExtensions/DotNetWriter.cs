@@ -17,6 +17,9 @@
 using JWriter = java.io.Writer;
 using JException = java.lang.Exception;
 
+using System.IO;
+using System;
+
 namespace net.liberty_development.SaxonHE11s9apiExtensions
 {
 
