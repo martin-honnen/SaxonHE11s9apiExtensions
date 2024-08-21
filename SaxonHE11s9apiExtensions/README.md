@@ -12,13 +12,13 @@ Understand that this is work in progress and kind of experimental, I don't have 
 
 To use Saxon under .NET, the coding is mainly done against the Java s9api API of Saxon HE 11 although I have provided some extension methods as helpers to ease the task of using .NET FileInfo or Stream instead of needing to know about and use Java specific java.io.File or Stream classes/APIs.
 
-With this new release using IKVM 8.8.9 and IKMV.Maven.Sdk 1.6.9, it should now be possible to both use and build the packages under Windows as well as MacOs and have a single NuGet package targetting .NET 6 and .NET 8 as well as .NET framework 4.8.
+With this new release using IKVM 8.10.1 and IKMV.Maven.Sdk 1.8.0 IKVM, for the first time in years, uses an up to date/latest build 422 of the Java 8/1.8 JDK; as for .NET, it should be possible to both use and build the packages under Windows as well as MacOs and have a single NuGet package targetting .NET 6 and .NET 8 as well as .NET framework 4.8.
 
 The basic usage is to to install the NuGet package IKVM.Maven.Sdk to be able to pull in the Saxon HE 11 (e.g. 11.6) and the XmlResolver code it uses directly from Maven:
 ```
   <ItemGroup>
-    <PackageReference Include="IKVM" Version="8.8.0" />
-    <PackageReference Include="IKVM.Maven.Sdk" Version="1.6.9" />
+    <PackageReference Include="IKVM" Version="8.10.1" />
+    <PackageReference Include="IKVM.Maven.Sdk" Version="1.8.0" />
     <MavenReference Include="net.sf.saxon:Saxon-HE" version="11.6" />
     <!--<MavenReference Include="org.xmlresolver:xmlresolver" Version="4.5.1" />
     <MavenReference Include="org.xmlresolver:xmlresolver" Category="data" Version="4.5.1" />-->
@@ -29,15 +29,15 @@ This extension project is also on NuGet so you can add it in your project e.g.
 
 ```
   <ItemGroup>
-    <PackageReference Include="IKVM.Maven.Sdk" Version="1.6.9" />
-    <PackageReference Include="SaxonHE11s9apiExtensions" Version="11.6.9" />
+    <PackageReference Include="IKVM.Maven.Sdk" Version="1.8.0" />
+    <PackageReference Include="SaxonHE11s9apiExtensions" Version="11.6.11" />
     <MavenReference Include="net.sf.saxon:Saxon-HE" version="11.6" />
     <!--<MavenReference Include="org.xmlresolver:xmlresolver" Version="4.5.1" />
     <MavenReference Include="org.xmlresolver:xmlresolver" Category="data" Version="4.5.1" />-->
   </ItemGroup>
 ```
 
-Then you are ready to write .NET 6 code against the Saxon 11 s9api API, helped by this extension library to not have to use most Java classes for input/output/URIs/URLs but to be able to use relevant .NET classes:
+Then you are ready to write .NET 6/8 code against the Saxon 11 s9api API, helped by this extension library to not have to use most Java classes for input/output/URIs/URLs but to be able to use relevant .NET classes:
 
 ```
 using net.sf.saxon.s9api;
