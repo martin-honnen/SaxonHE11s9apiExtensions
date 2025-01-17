@@ -1,18 +1,18 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net8.0;net48</TargetFrameworks>
+    <TargetFrameworks>net8.0;net9.0;net481</TargetFrameworks>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
-    <Title>Saxon HE 11 s9api Extension Helpers to use IKVM compiled Saxon HE 11 with .NET 6 or with .NET 8 or with .NET framework 4.8</Title>
-    <Version>11.6.11</Version>
+    <Title>Saxon HE 11 s9api Extension Helpers to use IKVM compiled Saxon HE 11 with .NET 8 or with .NET 9 or with .NET framework 4.8.1</Title>
+    <Version>11.6.12</Version>
     <Authors>Martin Honnen</Authors>
-    <Description>This is an extension method library to ease the use of an IKVM compiled version of Saxon HE 11 Java in .NET 6/8 and .NET framework 4.8 applications.</Description>
-    <Copyright>Copyright 2024 Martin Honnen</Copyright>
+    <Description>This is an extension method library to ease the use of an IKVM compiled version of Saxon HE 11 Java in .NET 8/9 and .NET framework 4.8(.1) applications.</Description>
+    <Copyright>Copyright 2025 Martin Honnen</Copyright>
     <PackageTags>xslt;XSLT;xpath;XPath;xquery;XQuery;xslt-3.0;XSLT-3.0;xquery-3.1;XQuery-3.1;xpath-3.1;XPath-3.1;json</PackageTags>
-	  <PackageReleaseNotes>This is the first release using Saxon HE 11.6 targetting both .NET framework 4.8 as well as .NET 6 and .NET 8, using the latest IKVM 8.10.1 and IKVM.Maven.Sdk 1.8.0 which are now using the latest build 422 of the Java 8/1.8 JDK</PackageReleaseNotes>
+	  <PackageReleaseNotes>This is the first release using Saxon HE 11.6 targetting both .NET framework 4.8.1 as well as .NET 8 and .NET 9, using the latest IKVM 8.10.3 and IKVM.Maven.Sdk 1.8.2 which are now using the latest build 422 of the Java 8/1.8 JDK</PackageReleaseNotes>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <RepositoryUrl>https://github.com/martin-honnen/SaxonHE11s9apiExtensions</RepositoryUrl>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -20,8 +20,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="IKVM" Version="8.10.1" />
-    <PackageReference Include="IKVM.Maven.Sdk" Version="1.8.0" />
+    <PackageReference Include="IKVM" Version="8.10.3" />
+    <PackageReference Include="IKVM.Maven.Sdk" Version="1.8.2" />
 	  <MavenReference Include="net.sf.saxon:Saxon-HE" version="11.6" />
 	<!--<MavenReference Include="org.xmlresolver:xmlresolver" Version="4.5.1" />
 	<MavenReference Include="org.xmlresolver:xmlresolver" Category="data" Version="4.5.1" />-->
