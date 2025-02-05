@@ -12,13 +12,13 @@ Understand that this is work in progress and kind of experimental, I don't have 
 
 To use Saxon under .NET, the coding is mainly done against the Java s9api API of Saxon HE 11 although I have provided some extension methods as helpers to ease the task of using .NET FileInfo or Stream instead of needing to know about and use Java specific java.io.File or Stream classes/APIs.
 
-With this new release, using IKVM 8.10.3 and IKMV.Maven.Sdk 1.8.2, IKVM uses an up to date/latest build 422 of the Java 8/1.8 JDK; as for .NET, it should be possible to both use and build the packages under Windows as well as MacOs and have a single NuGet package targetting .NET 8 and .NET 9 as well as .NET framework 4.8.1.
+With this new release, using IKVM 8.11.0 and IKMV.Maven.Sdk 1.9.0, IKVM uses an up to date/latest JDK 8u432-b06  of the Java 8/1.8 JDK; as for .NET, it should be possible to both use and build the packages under Windows as well as MacOs and have a single NuGet package targetting .NET 8 and .NET 9 as well as .NET framework 4.8.1.
 
 The basic usage is to to install the NuGet package IKVM.Maven.Sdk to be able to pull in the Saxon HE 11 (e.g. 11.6) and the XmlResolver code it uses directly from Maven:
 ```
   <ItemGroup>
-    <PackageReference Include="IKVM" Version="8.10.3" />
-    <PackageReference Include="IKVM.Maven.Sdk" Version="1.8.2" />
+    <PackageReference Include="IKVM" Version="8.11.0" />
+    <PackageReference Include="IKVM.Maven.Sdk" Version="1.9.0" />
     <MavenReference Include="net.sf.saxon:Saxon-HE" version="11.6" />
     <!--<MavenReference Include="org.xmlresolver:xmlresolver" Version="4.5.1" />
     <MavenReference Include="org.xmlresolver:xmlresolver" Category="data" Version="4.5.1" />-->
@@ -29,8 +29,8 @@ This extension project is also on NuGet so you can add it in your project e.g.
 
 ```
   <ItemGroup>
-    <PackageReference Include="IKVM.Maven.Sdk" Version="1.8.2" />
-    <PackageReference Include="SaxonHE11s9apiExtensions" Version="11.6.12" />
+    <PackageReference Include="IKVM.Maven.Sdk" Version="1.9.0" />
+    <PackageReference Include="SaxonHE11s9apiExtensions" Version="11.6.13" />
     <MavenReference Include="net.sf.saxon:Saxon-HE" version="11.6" />
     <!--<MavenReference Include="org.xmlresolver:xmlresolver" Version="4.5.1" />
     <MavenReference Include="org.xmlresolver:xmlresolver" Category="data" Version="4.5.1" />-->
